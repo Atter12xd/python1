@@ -26,3 +26,15 @@ print("\nElementos mayores a 50:\n", filtered_array)
 # Paso 4: Reshape del array a una matriz de 4x5
 reshaped_array = array.reshape(4, 5)
 print("\nArray reestructurado (4x5):\n", reshaped_array)
+
+# Paso 5: Operaciones con arrays
+# Crear otro array de 4x5 con valores del 1 al 20
+another_array = np.arange(1, 21).reshape(4, 5)
+print("\nOtro array (4x5):\n", another_array)
+
+# Suma y multiplicación elemento a elemento
+sum_arrays = reshaped_array + another_array
+mult_arrays = reshaped_array * another_array
+
+print("\nSuma de los arrays:\n", sum_arrays)
+print("\nMultiplicación de los arrays:\n", mult_arrays)
