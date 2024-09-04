@@ -18,3 +18,7 @@ print(f"Desviación estándar: {std_val}")
 # Paso 3: Modificar el array
 array = array * 2
 print("\nArray multiplicado por 2:\n", array)
+
+# Filtrar elementos mayores a 50
+filtered_array = array[array > 50]
+print("\nElementos mayores a 50:\n", filtered_array)
