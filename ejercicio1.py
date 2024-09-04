@@ -14,3 +14,7 @@ print(f"Valor mínimo: {min_val}")
 print(f"Valor máximo: {max_val}")
 print(f"Media: {mean_val}")
 print(f"Desviación estándar: {std_val}")
+
+# Paso 3: Modificar el array
+array = array * 2
+print("\nArray multiplicado por 2:\n", array)
