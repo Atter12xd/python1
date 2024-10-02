@@ -14,6 +14,6 @@ def maquina_de_turing(cadena):
     else:
         return "La cadena tiene un número impar de 1s."
 # Ejemplo de uso
-cadena = "01010101010101011"
+cadena = "0101010101101011"
 resultado = maquina_de_turing(cadena)
 print(resultado)
