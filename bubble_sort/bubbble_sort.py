@@ -13,4 +13,19 @@ estudiantes = [
     Estudiante("Carlos", 22, 85),
     Estudiante("Lucía", 21, 95),
     Estudiante("Pedro", 20, 90)
-]
+]   
+
+def bubble_sort_estudiantes(estudiantes):
+    n = len(estudiantes)
+    for i in range(n):
+        for j in range(0, n-i-1):
+            # Comparamos primero por promedio
+            if estudiantes[j].promedio > estudiantes[j+1].promedio:
+                estudiantes[j], estudiantes[j+1] = estudiantes[j+1], estudiantes[j]
+            # Si tienen el mismo promedio, ordenamos por edad
+            elif estudiantes[j].promedio == estudiantes[j+1].promedio:
+                if estudiantes[j].edad > estudiantes[j+1].edad:
+                    estudiantes[j], estudiantes[j+1] = estudiantes[j+1], estudiantes[j]
+
+bubble_sort_estudiantes(estudiantes)
+print(estudiantes)
