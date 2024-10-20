@@ -39,3 +39,11 @@ model.fit(X_train, y_train)
 mse = mean_squared_error(y_test, y_pred)
 print(f'Error Cuadrático Medio: {mse:.2f}')
 
+# Graficar la línea de regresión
+plt.scatter(X, y, color='blue')
+plt.plot(X, model.predict(X), color='red')  # Línea de regresión
+plt.xlabel('Tamaño de la Casa (en pies cuadrados)')
+plt.ylabel('Precio (en miles de dólares)')
+plt.title('Regresión Lineal: Precio vs Tamaño de la Casa')
+plt.show()
+
