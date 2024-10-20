@@ -35,3 +35,18 @@ from sklearn.ensemble import RandomForestClassifier
 # Crear y entrenar el modelo de Random Forest
 model = RandomForestClassifier(n_estimators=100, random_state=42)
 model.fit(X_train, y_train)
+
+from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
+
+# Hacer predicciones sobre el conjunto de prueba
+y_pred = model.predict(X_test)
+
+# Evaluar la precisión del modelo
+accuracy = accuracy_score(y_test, y_pred)
+print(f'Precisión del modelo: {accuracy:.2f}')
+
+# Generar la matriz de confusión y reporte de clasificación
+print("\nMatriz de Confusión:")
+print(confusion_matrix(y_test, y_pred))
+print("\nReporte de Clasificación:")
+print(classification_report(y_test, y_pred))
