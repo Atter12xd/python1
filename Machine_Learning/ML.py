@@ -1,3 +1,4 @@
+# Importar las bibliotecas necesarias
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -13,20 +14,11 @@ data = {
 
 df = pd.DataFrame(data)
 
-# Mostrar los primeros 5 registros
-print(df.head())
-
-plt.scatter(df['Size'], df['Price'], color='blue')
-plt.xlabel('Tamaño de la Casa (en pies cuadrados)')
-plt.ylabel('Precio (en miles de dólares)')
-plt.title('Relación entre Tamaño de la Casa y Precio')
-plt.show()
-
-    
 # Definir la variable independiente (X) y la variable dependiente (y)
 X = df[['Size']]
 y = df['Price']
 
+# Dividir los datos en conjunto de entrenamiento y prueba
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 # Crear el modelo de regresión lineal
@@ -34,6 +26,9 @@ model = LinearRegression()
 
 # Entrenar el modelo
 model.fit(X_train, y_train)
+
+# Realizar predicciones sobre el conjunto de prueba
+y_pred = model.predict(X_test)  # Aquí se define y_pred
 
 # Evaluar el modelo usando el error cuadrático medio
 mse = mean_squared_error(y_test, y_pred)
@@ -46,4 +41,3 @@ plt.xlabel('Tamaño de la Casa (en pies cuadrados)')
 plt.ylabel('Precio (en miles de dólares)')
 plt.title('Regresión Lineal: Precio vs Tamaño de la Casa')
 plt.show()
-
