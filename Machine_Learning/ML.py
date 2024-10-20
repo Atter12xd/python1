@@ -15,3 +15,9 @@ df = pd.DataFrame(data)
 
 # Mostrar los primeros 5 registros
 print(df.head())
+
+plt.scatter(df['Size'], df['Price'], color='blue')
+plt.xlabel('Tamaño de la Casa (en pies cuadrados)')
+plt.ylabel('Precio (en miles de dólares)')
+plt.title('Relación entre Tamaño de la Casa y Precio')
+plt.show()
