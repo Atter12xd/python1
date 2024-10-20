@@ -21,3 +21,8 @@ plt.xlabel('Tamaño de la Casa (en pies cuadrados)')
 plt.ylabel('Precio (en miles de dólares)')
 plt.title('Relación entre Tamaño de la Casa y Precio')
 plt.show()
+
+    
+# Definir la variable independiente (X) y la variable dependiente (y)
+X = df[['Size']]
+y = df['Price']
