@@ -28,3 +28,10 @@ X_train, X_test, y_train, y_test = train_test_split(sequences, labels, test_size
 
 print(f"Entrenamiento: {len(X_train)} secuencias")
 print(f"Prueba: {len(X_test)} secuencias")
+
+
+from sklearn.ensemble import RandomForestClassifier
+
+# Crear y entrenar el modelo de Random Forest
+model = RandomForestClassifier(n_estimators=100, random_state=42)
+model.fit(X_train, y_train)
