@@ -35,3 +35,7 @@ model = LinearRegression()
 # Entrenar el modelo
 model.fit(X_train, y_train)
 
+# Evaluar el modelo usando el error cuadrático medio
+mse = mean_squared_error(y_test, y_pred)
+print(f'Error Cuadrático Medio: {mse:.2f}')
+
