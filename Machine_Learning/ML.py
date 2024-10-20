@@ -41,3 +41,4 @@ plt.xlabel('Tamaño de la Casa (en pies cuadrados)')
 plt.ylabel('Precio (en miles de dólares)')
 plt.title('Regresión Lineal: Precio vs Tamaño de la Casa')
 plt.show()
+
