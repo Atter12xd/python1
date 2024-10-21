@@ -50,3 +50,26 @@ print("\nMatriz de Confusión:")
 print(confusion_matrix(y_test, y_pred))
 print("\nReporte de Clasificación:")
 print(classification_report(y_test, y_pred))
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Mostrar la matriz de confusión de forma gráfica
+conf_matrix = confusion_matrix(y_test, y_pred)
+sns.heatmap(conf_matrix, annot=True, fmt='d', cmap="Blues")
+plt.xlabel('Predicción')
+plt.ylabel('Verdadero')
+plt.title('Matriz de Confusión')
+plt.show()
+
+# Mostrar la importancia de las características (cada bit)
+importances = model.feature_importances_
+features = [f'Bit {i+1}' for i in range(8)]
+indices = np.argsort(importances)
+
+plt.figure(figsize=(8,6))
+plt.title('Importancia de las Características')
+plt.barh(range(len(indices)), importances[indices], align='center')
+plt.yticks(range(len(indices)), [features[i] for i in indices])
+plt.xlabel('Importancia Relativa')
+plt.show()
